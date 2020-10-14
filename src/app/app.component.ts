@@ -11,19 +11,15 @@ export class AppComponent implements OnInit {
   title = 'dom-event-subscription';
 
   clickObservable: Observable<any> = fromEvent(document, 'click');
-  auxClickObservable: Observable<any> = fromEvent(document, 'auxclick');
+  rightClickObservable: Observable<any> = fromEvent(document, 'auxclick');
   mouseOverObservable: Observable<any> = fromEvent(document, 'mouseover');
-  scrollObservable: Observable<any> = fromEvent(document, 'scroll');
-  touchMoveObservable: Observable<any> = fromEvent(document, 'touchmove');
   wheelObservable: Observable<any> = fromEvent(document, 'wheel');
 
   private subscribeToObservable() {
-    this.scrollObservable.subscribe(() => console.log(`subscribe: scroll event !`));
-    this.touchMoveObservable.subscribe(() => console.log(`subscribe: touch move event !`));
-    this.mouseOverObservable.subscribe(() => console.log(`subscribe: mouse hover!`));
-    this.wheelObservable.subscribe(() => console.log(`subscribe: wheel event!`));
-    this.auxClickObservable.subscribe(() => console.log(`subscribe: aux click event!`));
-    this.clickObservable.subscribe(()=> console.log(`subscribed: mouse clicked!`))
+    this.mouseOverObservable.subscribe(() => console.log(`Mouse over event!`));
+    this.wheelObservable.subscribe(() => console.log(`Mouse wheel event!`));
+    this.rightClickObservable.subscribe(() => console.log(`Right click event!`));
+    this.clickObservable.subscribe(()=> console.log(` Mouse click event!`))
   }
 
   public searchInput: string;
