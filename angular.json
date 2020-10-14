@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "dom-event-subscription"
+    }
+  },
+  "defaultProject": "dom-event-subscription",
+  "cli": {
+    "analytics": false
+  }
 }
